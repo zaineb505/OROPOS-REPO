@@ -1,0 +1,115 @@
+// Style général du modal
+.mat-dialog-container {
+  background-color: #fff8e1; // Couleur de fond avec une touche de beige rappelant la croûte de pizza
+  border-radius: 8px; // Bords arrondis pour un aspect plus doux
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Ombre pour un effet d'élévation
+}
+
+// Style du titre du modal
+h1[mat-dialog-title] {
+  color: orangered; // Rouge profond rappelant la sauce tomate
+  font-family: 'Poppins', sans-serif; // Police moderne et lisible
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px; // Espace sous le titre pour aérer
+  text-align: center;
+}
+
+// Style du contenu du modal
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+th {
+  background-color: #ffcc80; // Couleur orangée rappelant le fromage fondu
+  color: #ff7043; // Marron foncé pour rappeler la croûte
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  //border-bottom: 2px solid #d32f2f; // Ligne de séparation rouge pour rappeler la sauce tomate
+  text-transform: uppercase; // Texte en majuscules pour un aspect plus imposant
+  letter-spacing: 1px; // Espacement des lettres pour améliorer la lisibilité
+}
+
+
+// Style du tableau
+table.mat-table {
+  width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+  //color: #4e342e; // Marron foncé pour rappeler la croûte
+  font-family: 'Poppins', sans-serif;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  background-color: #ffcc80; // Couleur orangée rappelant le fromage fondu
+  text-align: center;
+}
+
+.mat-cell {
+  text-align: center;
+  padding: 8px;
+}
+
+// Style des boutons dans la colonne "Server"
+button[mat-button] {
+  background-color: orange; // Couleur orange vif rappelant la garniture de pizza
+  color: white;
+  border-radius: 4px;
+  padding: 8px 100px;
+  width: 100%;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f4511e; // Couleur plus foncée au survol pour un effet interactif
+  }
+}
+
+
+
+// Style des actions du modal
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+.action {
+  background-color: #1dad24; // Couleur orange vif rappelant la garniture de pizza
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f4511e; // Couleur plus foncée au survol pour un effet interactif
+  }
+}
+
+
+.mat-dialog-actions button[mat-button] {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #4e342e;
+}
+
+.mat-dialog-actions button[mat-button]:last-child {
+  background-color: #d32f2f; // Rouge profond pour le bouton de transfert
+  color: white;
+
+  &:hover {
+    background-color: #b71c1c; // Rouge encore plus foncé au survol
+  }
+}

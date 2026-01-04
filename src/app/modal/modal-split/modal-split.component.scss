@@ -1,0 +1,52 @@
+::ng-deep .split-card {
+  background: #f9f3f0; // Light pizza theme background
+  border: 1px solid #e3d0c1; // Light border
+  border-radius: 8px;
+  color: #eb872a; // Default text color for the card
+}
+
+.split-card mat-card-header {
+  background:#eb872a;  // Light pinkish background for header
+  color: #eb872a;  // Darker text color for contrast
+}
+
+.split-card mat-card-content {
+  padding: 16px;
+  color: #eb872a;  // Red text color
+}
+
+.split-card mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+}
+
+.button-container {
+  display: flex;
+  gap: 8px; // Space between buttons
+}
+
+.split-button {
+  background-color: #eb872a;
+  color: #fff;
+  font-weight: bold;
+  padding: 16px 32px;
+  font-size: 16px;   border-radius: 4px;
+  border: none; // Remove default border
+  text-transform: uppercase; // Capitalize button text
+  cursor: pointer; // Change cursor on hover
+  transition: background-color 0.3s ease; // Smooth transition for hover effect
+}
+
+.split-button:hover {
+  background-color: #eb872a;  // Slightly darker background on hover
+}
+
+mat-dialog-actions {
+  padding: 8px 16px;
+}
+
+mat-dialog-title {
+  background-color: #eb872a;  // Match header background color
+  color: #eb872a;
+}

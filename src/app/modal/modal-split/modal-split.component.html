@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Split Order</h1>
+<div mat-dialog-content>
+  <ng-container *ngIf="isOpenStatus; else closedMessage">
+    <p>Select how you want to split the order:</p>
+    <p><strong>Total Amount: </strong>{{data.total}}</p>
+    <div mat-dialog-actions>
+      <div class="button-container" *ngIf="isOpenStatus">
+        <button mat-button class="split-button split-1">Split equally</button>
+        <button mat-button class="split-button split-2"  (click)="onSplitBySeat()">Split by seat</button>
+        <button mat-button class="split-button split-3" (click)="onSplitBySeat()">Split manually</button>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #closedMessage>
+    <p>The ticket is already paid.</p>
+  </ng-template>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Close</button>
+</div>

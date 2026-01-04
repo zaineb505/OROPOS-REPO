@@ -1,0 +1,149 @@
+.keypad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 15px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    .keypad-button {
+      width: 100px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+      background-color: #ff6600; /* Orange color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e65c00; /* Darker orange on hover */
+      }
+
+      &:active {
+        background-color: #cc5200; /* Even darker on click */
+      }
+    }
+
+    .keypad-display {
+      width: 100px;
+      height: 60px;
+      font-size: 20px;
+      text-align: center;
+      margin: 5px;
+      padding: 0;
+      background-color: white;
+      border: 2px solid #ff6600; /* Orange border */
+      border-radius: 5px;
+    }
+  }
+}
+
+.mat-dialog-title {
+  color: #ff0000; /* Red color for the title */
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: #ff6600; /* Orange color for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e65c00; /* Darker orange on hover */
+    }
+
+    &:active {
+      background-color: #cc5200; /* Even darker on click */
+    }
+  }
+}
+.keypad-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-size: cover;
+  padding: 20px;
+  border-radius: 15px;
+
+  .row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    .keypad-button {
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+      background-color: #ff6600; /* Orange color */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #e65c00; /* Darker orange on hover */
+      }
+
+      &:active {
+        background-color: #cc5200; /* Even darker on click */
+      }
+    }
+
+    .keypad-display {
+      width: 100px;
+      height: 60px;
+      font-size: 20px;
+      text-align: center;
+      margin: 5px;
+      padding: 0;
+      background-color: white;
+      border: 2px solid #ff6600; /* Orange border */
+      border-radius: 5px;
+    }
+  }
+}
+
+.mat-dialog-title {
+  color: #ff0000; /* Red color for the title */
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    background-color: #ff6600; /* Orange color for buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e65c00; /* Darker orange on hover */
+    }
+
+    &:active {
+      background-color: #cc5200; /* Even darker on click */
+    }
+  }
+}

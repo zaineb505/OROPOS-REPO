@@ -1,0 +1,57 @@
+::ng-deep {
+  .trinta-card {
+    &.all-courses-card {
+      .mat-mdc-card-content {
+        .custom-tab-group {
+          display: flex; // Utilisez flex au lieu de block
+          justify-content: center; // Centre les onglets dans le conteneur
+          background-color: #e3e6e8;
+          border-radius: 50px;
+          padding: 5px; // Réduisez le padding pour réduire l'espace gris
+          box-sizing: border-box; // Assure que le padding est inclus dans la largeur
+          width: fit-content; // Ajuste la largeur du conteneur au contenu (les onglets)
+          margin: 0 auto; // Centre le conteneur horizontalement si nécessaire
+
+          .mat-mdc-tab-label-container {
+            display: flex;
+            justify-content: space-between;
+            flex: 1;
+            border: none;
+            box-sizing: border-box; // Assure que le padding est inclus dans la largeur
+
+            .mat-mdc-tab {
+              display: flex; // Utilisez flex pour centrer le contenu
+              justify-content: center; // Centre le texte horizontalement
+              align-items: center; // Centre le texte verticalement
+              flex-grow: 1;
+              min-width: 80px; // Ajustez la largeur minimale si nécessaire
+              text-align: center;
+              padding: 10px 10px;
+              margin: 0 3px; // Réduisez l'espace entre les boutons
+              border-radius: 25px;
+              color: #333;
+              font-weight: bold;
+              background-color: transparent;
+              position: relative; // Pour positionner l'indicateur, mais on va le supprimer
+              transition: background-color 0.3s, color 0.3s;
+
+              &.mat-mdc-tab--active {
+                background-color: #ffa319; // Couleur de fond des onglets actifs
+                color: #fff; // Couleur du texte des onglets actifs
+              }
+
+              &:hover {
+                background-color: #ffa319; // Couleur de fond au survol
+                color: #fff; // Couleur du texte au survol
+              }
+            }
+          }
+
+          .mat-mdc-tab-indicator {
+            display: none !important; // Masquer l'indicateur par défaut avec !important
+          }
+        }
+      }
+    }
+  }
+}

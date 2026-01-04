@@ -1,0 +1,33 @@
+<h1 mat-dialog-title>Enter number of split</h1>
+<div mat-dialog-content>
+  <div class="keypad-container">
+    <div class="row">
+      <button class="keypad-button" (click)="decrementSplitNumber()">-</button>
+      <input type="number" [(ngModel)]="splitNumber" readonly class="keypad-display" />
+      <button class="keypad-button" (click)="incrementSplitNumber()">+</button>
+    </div>
+    <div class="row">
+      <button class="keypad-button" (click)="appendNumber(7)">7</button>
+      <button class="keypad-button" (click)="appendNumber(8)">8</button>
+      <button class="keypad-button" (click)="appendNumber(9)">9</button>
+    </div>
+    <div class="row">
+      <button class="keypad-button" (click)="appendNumber(4)">4</button>
+      <button class="keypad-button" (click)="appendNumber(5)">5</button>
+      <button class="keypad-button" (click)="appendNumber(6)">6</button>
+    </div>
+    <div class="row">
+      <button class="keypad-button" (click)="appendNumber(1)">1</button>
+      <button class="keypad-button" (click)="appendNumber(2)">2</button>
+      <button class="keypad-button" (click)="appendNumber(3)">3</button>
+    </div>
+    <div class="row">
+      <button class="keypad-button" (click)="appendNumber(0)">0</button>
+      <button class="keypad-button" (click)="onClear()">Clear</button>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onOk()">Ok</button>
+  <button mat-button (click)="onCancel()">Cancel</button>
+</div>

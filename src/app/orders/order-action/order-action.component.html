@@ -1,0 +1,20 @@
+<app-orders-table #ordersTable (rowSelected)="onRowSelected($event)"></app-orders-table>
+
+<mat-card class="trinta-card all-courses-card mb-25 bg-white border-none d-block">
+  <mat-card-header>
+    <mat-card-title>
+      Select Order
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="custom-tab-grp">
+      <button class="tab-btn" (click)="openDialog()">Order Info</button>
+      <button class="tab-btn">Edit</button>
+      <button class="tab-btn">Send</button>
+      <button class="tab-btn" (click)="openModalSettle()">Settel</button>
+      <button class="tab-btn" (click)="openDialog()">Split</button>
+      <button class="tab-btn" (click)="closeOrder()">Close Order</button>
+      <button class="tab-btn" (click)="transferOrder()">Transfer Order</button>
+    </div>
+  </mat-card-content>
+</mat-card>

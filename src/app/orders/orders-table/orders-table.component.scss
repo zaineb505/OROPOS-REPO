@@ -1,0 +1,305 @@
+.trinta-card {
+  &.all-courses-card {
+    .custom-tab-grp {
+      display: flex;
+      justify-content: space-between;
+
+      .tab-btn {
+        background: transparent;
+        border: none;
+        padding: 10px 20px;
+
+        font: {
+          size: 16px;
+          family: var(--fontFamily);
+          weight: 500;
+        }
+
+        color: var(--darkColor);
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &.active {
+          border-bottom: 2px solid #ffa319;
+        }
+      }
+    }
+  }
+
+  mat-card-header {
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ce1a0e; // Tomato sauce color
+      //text-align: center;
+      padding: 0 15px 15px;
+    }
+
+  }
+
+  /* Include other styles as they are */
+  &.recent-orders-card {
+    .recent-orders-table {
+      .mat-mdc-table {
+        width: 100%;
+        overflow: hidden;
+        background-color: transparent;
+
+        .mat-mdc-header-row {
+          height: auto;
+          line-height: initial;
+          letter-spacing: 0.14px;
+          color: var(--darkColor);
+          background: transparent;
+
+          font: {
+            weight: 500;
+            size: var(--fontSize);
+            family: var(--fontFamily);
+          }
+
+          .mat-mdc-header-cell {
+            border: none;
+            overflow: unset;
+            text-align: start;
+            white-space: nowrap;
+            line-height: initial;
+            padding: 0 15px 15px;
+            letter-spacing: normal;
+            background: transparent;
+            border-bottom: 2px solid #edeff5;
+          }
+        }
+
+        .mat-mdc-row,
+        .mdc-data-table__content {
+          line-height: initial;
+          background: transparent;
+
+          font: {
+            weight: normal;
+            size: var(--fontSize);
+            family: var(--fontFamily);
+          }
+        }
+
+        .mat-mdc-row {
+          height: auto;
+          color: var(--blackColor);
+
+          &:hover {
+            background-color: #ffa319; // Change this to the color you want
+          }
+
+          &.selected-row {
+            background-color: #ffa319 !important;
+            ; // Adjust the color to match your pizza theme
+          }
+        }
+
+        .mat-mdc-cell {
+          border: none;
+          padding: 15px;
+          overflow: hidden;
+          text-align: start;
+          white-space: nowrap;
+          line-height: initial;
+          letter-spacing: 0.14px;
+          background: transparent;
+          border-bottom: 1px solid #edeff5;
+
+          .product-info {
+            .image {
+              width: 52px;
+              margin-right: 16px;
+              border-radius: 6px;
+
+              img {
+                border-radius: 6px;
+              }
+            }
+
+            .info {
+              a {
+                margin-bottom: 7px;
+
+                font: {
+                  size: 15px;
+                  family: var(--headingFontFamily);
+                }
+              }
+            }
+          }
+
+          .trinta-badge {
+            font-size: 12px;
+            border-radius: 2px;
+            padding: 1.5px 7px;
+            letter-spacing: 1px;
+
+            &.active-status {
+              color: #3f51b5;
+              background: rgba(63, 81, 181, 0.1);
+            }
+
+            &.Open-status {
+              color: #00b69b;
+              background: rgba(0, 182, 155, 0.1);
+            }
+
+            &.Closed-status {
+              color: #e91e63;
+              background: rgba(233, 30, 99, 0.1);
+            }
+          }
+        }
+      }
+
+      .champ {
+        background-color: #ffa319;
+      }
+
+      .mat-mdc-paginator {
+        padding-top: 15px;
+      }
+
+      .trinta-badge {
+        font-size: 11px;
+      }
+    }
+
+    .search-container {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 40px 10px 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f7f9fc;
+      color: #666;
+      outline: none;
+    }
+
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #1a73e8; // Adjust the color to match your theme
+    }
+  }
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 767px) {
+  .trinta-card {
+    &.recent-orders-card {
+      .search-box {
+        margin-bottom: 20px;
+
+        input {
+          height: 45px;
+
+          padding: {
+            left: 15px;
+            right: 15px;
+          }
+        }
+
+        button {
+          right: 15px;
+          font-size: 18px;
+        }
+      }
+
+      .recent-orders-table {
+        .mat-mdc-table {
+          .mat-mdc-header-row {
+            font-size: 13px;
+          }
+
+          .mat-mdc-row,
+          .mdc-data-table__content {
+            font-size: 13px;
+          }
+
+          .mat-mdc-cell {
+            .product-info {
+              .image {
+                width: 50px;
+                margin-right: 12px;
+              }
+
+              .info {
+                a {
+                  margin-bottom: 7px;
+                  font-size: 13px;
+                }
+              }
+            }
+
+            .trinta-badge {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .trinta-card {
+    &.recent-orders-card {
+      .search-box {
+        margin-bottom: 20px;
+
+        input {
+          padding: {
+            left: 18px;
+            right: 18px;
+          }
+        }
+
+        button {
+          font-size: 20px;
+        }
+      }
+
+      .recent-orders-table {
+        .mat-mdc-table {
+          .mat-mdc-cell {
+            .product-info {
+              .image {
+                margin-right: 15px;
+              }
+
+              .info {
+                a {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+@media only screen and (min-width: 1600px) {}

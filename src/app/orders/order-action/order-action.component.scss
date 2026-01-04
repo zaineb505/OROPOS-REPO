@@ -1,0 +1,61 @@
+// General styles for the card
+.trinta-card {
+  &.all-courses-card {
+    margin-bottom: 25px;
+    background-color: white;
+    border: none;
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  mat-card-header {
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ce1a0e; // Tomato sauce color
+      text-align: center;
+      padding: 0 15px 15px;
+
+    }
+  }
+
+  mat-card-content {
+    .custom-tab-grp {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 10px; // Added space between buttons
+
+      .tab-btn {
+        background-color: orange; // Orange background for the buttons
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 50px; // Make buttons round
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: darkorange; // Darker shade on hover
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Shadow on hover
+          transform: translateY(-3px); // Slight lift on hover
+        }
+
+        &:active {
+          background-color: orangered; // Even darker shade on active
+          transform: translateY(1px); // Slight press effect on active
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5); // Focus ring
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Split Result</h1>
+<div mat-dialog-content>
+  <div class="ticket-container">
+    <div class="ticket" *ngFor="let ticket of tickets; let i = index">
+      <div class="ticket-header">
+        {{ i === 0 ? 'Main Ticket' : 'Ticket #' + i }}
+      </div>
+      <div class="ticket-body">
+        <p><strong>Amount per Split:</strong> {{ ticket.amount | currency }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button>Order info</button>
+  <button mat-button>Print all</button>
+  <button mat-button>Print</button>
+  <button mat-button>Pay all</button>
+  <button mat-button>Pay</button>
+  <button mat-button>Save split tickets</button>
+</div>
