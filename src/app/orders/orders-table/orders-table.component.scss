@@ -1,254 +1,499 @@
 .trinta-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 107, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 107, 0, 0.15);
+  }
+
   &.all-courses-card {
+    background: linear-gradient(145deg, #ffffff 0%, #fef8f5 100%);
+
     .custom-tab-grp {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 8px;
+      padding: 20px 20px 0;
+      background: linear-gradient(to bottom, #fff 0%, #fef8f5 100%);
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        right: 20px;
+        height: 1px;
+        background: linear-gradient(90deg, 
+          transparent 0%, 
+          rgba(255, 107, 0, 0.2) 50%, 
+          transparent 100%);
+      }
 
       .tab-btn {
         background: transparent;
         border: none;
-        padding: 10px 20px;
-
+        padding: 14px 28px;
         font: {
-          size: 16px;
-          family: var(--fontFamily);
-          weight: 500;
+          size: 15px;
+          family: 'Montserrat', var(--fontFamily);
+          weight: 600;
+        }
+        color: #666;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 50px;
+        position: relative;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, #ff6b00 0%, #ff9800 100%);
+          border-radius: 50px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          z-index: -1;
         }
 
-        color: var(--darkColor);
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
         &:hover {
-          background-color: rgba(0, 0, 0, 0.1);
+          color: #ff6b00;
+          transform: translateY(-2px);
+          
+          &::before {
+            opacity: 0.1;
+          }
         }
 
         &.active {
-          border-bottom: 2px solid #ffa319;
+          background: linear-gradient(135deg, #ff6b00 0%, #ff9800 100%);
+          color: #fff;
+          box-shadow: 
+            0 6px 20px rgba(255, 107, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+          transform: translateY(-2px);
+          
+          &::after {
+            content: '🍕';
+            margin-left: 8px;
+            font-size: 14px;
+            animation: pizzaSpin 0.6s ease;
+          }
+        }
+      }
+    }
+
+    mat-card-header {
+      padding: 25px 25px 15px;
+      background: linear-gradient(to right, #fff6f0 0%, #fff 100%);
+      border-bottom: 1px solid rgba(255, 107, 0, 0.1);
+      
+      mat-card-title {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #ff6b00;
+        text-align: left;
+        padding: 0;
+        position: relative;
+        font-family: 'Montserrat', sans-serif;
+        
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 60px;
+          height: 4px;
+          background: linear-gradient(90deg, #ff6b00, #ff9800);
+          border-radius: 2px;
         }
       }
     }
   }
 
-  mat-card-header {
-    mat-card-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ce1a0e; // Tomato sauce color
-      //text-align: center;
-      padding: 0 15px 15px;
+  &.recent-orders-card {
+    background: #fff;
+    
+    .search-container {
+      position: relative;
+      margin: 25px 25px 20px;
+      
+      &::before {
+        content: '🔍';
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #ff6b00;
+        z-index: 2;
+      }
     }
 
-  }
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      font-size: 15px;
+      font-family: 'Montserrat', var(--fontFamily);
+      border: 2px solid rgba(255, 107, 0, 0.2);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #fef8f5 0%, #fff 100%);
+      color: #333;
+      outline: none;
+      transition: all 0.3s ease;
+      box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.04);
+      
+      &:focus {
+        border-color: #ff6b00;
+        box-shadow: 
+          0 0 0 3px rgba(255, 107, 0, 0.15),
+          inset 0 2px 10px rgba(0, 0, 0, 0.04);
+      }
+      
+      &::placeholder {
+        color: #999;
+        font-weight: 400;
+      }
+    }
 
-  /* Include other styles as they are */
-  &.recent-orders-card {
     .recent-orders-table {
       .mat-mdc-table {
         width: 100%;
         overflow: hidden;
-        background-color: transparent;
+        background: transparent;
+        border-collapse: separate;
+        border-spacing: 0 8px;
 
         .mat-mdc-header-row {
-          height: auto;
-          line-height: initial;
-          letter-spacing: 0.14px;
-          color: var(--darkColor);
-          background: transparent;
-
+          height: 60px;
+          background: linear-gradient(to right, #fff6f0 0%, #fff5ee 100%);
+          border-radius: 12px 12px 0 0;
+          
           font: {
-            weight: 500;
-            size: var(--fontSize);
-            family: var(--fontFamily);
+            weight: 700;
+            size: 15px;
+            family: 'Montserrat', var(--fontFamily);
           }
 
           .mat-mdc-header-cell {
             border: none;
-            overflow: unset;
-            text-align: start;
-            white-space: nowrap;
-            line-height: initial;
-            padding: 0 15px 15px;
-            letter-spacing: normal;
+            color: #ff6b00;
+            padding: 0 25px;
+            letter-spacing: 0.5px;
             background: transparent;
-            border-bottom: 2px solid #edeff5;
-          }
-        }
-
-        .mat-mdc-row,
-        .mdc-data-table__content {
-          line-height: initial;
-          background: transparent;
-
-          font: {
-            weight: normal;
-            size: var(--fontSize);
-            family: var(--fontFamily);
+            border-bottom: 2px solid rgba(255, 107, 0, 0.2);
+            
+            &:first-child {
+              border-radius: 12px 0 0 0;
+            }
+            
+            &:last-child {
+              border-radius: 0 12px 0 0;
+            }
           }
         }
 
         .mat-mdc-row {
-          height: auto;
-          color: var(--blackColor);
+          height: 70px;
+          background: #fff;
+          margin: 8px 0;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+          position: relative;
+          border: 1px solid transparent;
+          
+          font: {
+            weight: 500;
+            size: 14px;
+            family: 'Montserrat', var(--fontFamily);
+          }
 
           &:hover {
-            background-color: #ffa319; // Change this to the color you want
+            background: linear-gradient(135deg, #fff8f0 0%, #fff5eb 100%);
+            border-color: rgba(255, 107, 0, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 
+              0 8px 20px rgba(255, 107, 0, 0.1),
+              0 2px 8px rgba(0, 0, 0, 0.05);
+            
+            &::before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 4px;
+              height: 60%;
+              background: linear-gradient(to bottom, #ff6b00, #ff9800);
+              border-radius: 0 2px 2px 0;
+            }
           }
 
           &.selected-row {
-            background-color: #ffa319 !important;
-            ; // Adjust the color to match your pizza theme
+            background: linear-gradient(135deg, #fff0e6 0%, #ffe8d6 100%) !important;
+            border: 2px solid #ff6b00;
+            
+            .mat-mdc-cell {
+              color: #ff6b00;
+              font-weight: 600;
+            }
           }
         }
 
         .mat-mdc-cell {
           border: none;
-          padding: 15px;
-          overflow: hidden;
-          text-align: start;
-          white-space: nowrap;
-          line-height: initial;
-          letter-spacing: 0.14px;
+          padding: 20px 25px;
+          color: #555;
           background: transparent;
-          border-bottom: 1px solid #edeff5;
+          border-bottom: none;
+          
+          &:first-child {
+            border-radius: 12px 0 0 12px;
+          }
+          
+          &:last-child {
+            border-radius: 0 12px 12px 0;
+          }
 
           .product-info {
+            display: flex;
+            align-items: center;
+            
             .image {
-              width: 52px;
-              margin-right: 16px;
-              border-radius: 6px;
-
+              width: 56px;
+              height: 56px;
+              margin-right: 20px;
+              border-radius: 12px;
+              overflow: hidden;
+              position: relative;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              
               img {
-                border-radius: 6px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+              }
+              
+              &::after {
+                content: '🍕';
+                position: absolute;
+                top: 50px;
+                right: -8px;
+                background: #ff6b00;
+                color: white;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
               }
             }
 
             .info {
               a {
-                margin-bottom: 7px;
-
-                font: {
-                  size: 15px;
-                  family: var(--headingFontFamily);
+                margin-bottom: 6px;
+                color: #333;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 15px;
+                transition: color 0.3s ease;
+                
+                &:hover {
+                  color: #ff6b00;
                 }
+              }
+              
+              .category {
+                font-size: 12px;
+                color: #ff9800;
+                font-weight: 500;
               }
             }
           }
 
           .trinta-badge {
             font-size: 12px;
-            border-radius: 2px;
-            padding: 1.5px 7px;
-            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 20px;
+            padding: 6px 16px;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
 
             &.active-status {
-              color: #3f51b5;
-              background: rgba(63, 81, 181, 0.1);
+              color: #00b69b;
+              background: rgba(0, 182, 155, 0.15);
+              border: 1px solid rgba(0, 182, 155, 0.3);
+              
+              &::before {
+                content: '✓ ';
+              }
             }
 
             &.Open-status {
-              color: #00b69b;
-              background: rgba(0, 182, 155, 0.1);
+              color: #ff6b00;
+              background: rgba(255, 107, 0, 0.15);
+              border: 1px solid rgba(255, 107, 0, 0.3);
+              
+              &::before {
+                content: '🔥 ';
+              }
             }
 
             &.Closed-status {
-              color: #e91e63;
-              background: rgba(233, 30, 99, 0.1);
+              color: #e74c3c;
+              background: rgba(231, 76, 60, 0.15);
+              border: 1px solid rgba(231, 76, 60, 0.3);
+              
+              &::before {
+                content: '✗ ';
+              }
+            }
+            
+            &:hover {
+              transform: scale(1.05);
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
           }
         }
       }
 
       .champ {
-        background-color: #ffa319;
+        background: linear-gradient(135deg, #ff6b00 0%, #ff9800 100%);
+        color: white !important;
       }
 
       .mat-mdc-paginator {
-        padding-top: 15px;
+        padding: 25px;
+        background: transparent;
+        
+        ::ng-deep .mat-mdc-paginator-container {
+          justify-content: space-between;
+          padding: 0;
+        }
+        
+        ::ng-deep .mat-mdc-paginator-page-size {
+          margin-right: 0;
+        }
+        
+        ::ng-deep .mat-mdc-paginator-range-actions {
+          .mat-mdc-icon-button {
+            background: #f5f5f5;
+            border-radius: 10px;
+            margin: 0 5px;
+            
+            &:hover {
+              background: #ff6b00;
+              color: white;
+            }
+          }
+        }
       }
-
-      .trinta-badge {
-        font-size: 11px;
-      }
-    }
-
-    .search-container {
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 10px 40px 10px 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f7f9fc;
-      color: #666;
-      outline: none;
-    }
-
-    .search-icon {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      color: #1a73e8; // Adjust the color to match your theme
     }
   }
+}
+
+@keyframes pizzaSpin {
+  0% { transform: rotate(0deg) scale(0.8); opacity: 0; }
+  100% { transform: rotate(360deg) scale(1); opacity: 1; }
 }
 
 /* Responsive Styles */
 @media only screen and (max-width: 767px) {
   .trinta-card {
-    &.recent-orders-card {
-      .search-box {
-        margin-bottom: 20px;
-
-        input {
-          height: 45px;
-
-          padding: {
-            left: 15px;
-            right: 15px;
-          }
-        }
-
-        button {
-          right: 15px;
-          font-size: 18px;
+    border-radius: 12px;
+    margin: 15px;
+    
+    &.all-courses-card {
+      .custom-tab-grp {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 15px 15px 0;
+        
+        .tab-btn {
+          padding: 12px 20px;
+          font-size: 13px;
+          flex: 1;
+          min-width: calc(50% - 6px);
         }
       }
-
+      
+      mat-card-header {
+        padding: 20px 20px 15px;
+        
+        mat-card-title {
+          font-size: 1.5rem;
+          
+          &::before {
+            width: 40px;
+            bottom: -6px;
+          }
+        }
+      }
+    }
+    
+    &.recent-orders-card {
+      .search-container {
+        margin: 20px 20px 15px;
+      }
+      
+      .search-input {
+        padding: 14px 20px 14px 45px;
+        font-size: 14px;
+      }
+      
       .recent-orders-table {
         .mat-mdc-table {
           .mat-mdc-header-row {
-            font-size: 13px;
+            height: 50px;
+            
+            .mat-mdc-header-cell {
+              padding: 0 15px;
+              font-size: 13px;
+            }
           }
-
-          .mat-mdc-row,
-          .mdc-data-table__content {
-            font-size: 13px;
-          }
-
-          .mat-mdc-cell {
-            .product-info {
-              .image {
-                width: 50px;
-                margin-right: 12px;
-              }
-
-              .info {
-                a {
-                  margin-bottom: 7px;
-                  font-size: 13px;
+          
+          .mat-mdc-row {
+            height: 60px;
+            
+            .mat-mdc-cell {
+              padding: 15px;
+              
+              .product-info {
+                .image {
+                  width: 45px;
+                  height: 45px;
+                  margin-right: 12px;
+                }
+                
+                .info {
+                  a {
+                    font-size: 13px;
+                  }
+                  
+                  .category {
+                    font-size: 11px;
+                  }
                 }
               }
-            }
-
-            .trinta-badge {
-              font-size: 11px;
+              
+              .trinta-badge {
+                font-size: 11px;
+                padding: 5px 12px;
+              }
             }
           }
         }
@@ -257,34 +502,18 @@
   }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {}
-
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .trinta-card {
     &.recent-orders-card {
-      .search-box {
-        margin-bottom: 20px;
-
-        input {
-          padding: {
-            left: 18px;
-            right: 18px;
-          }
-        }
-
-        button {
-          font-size: 20px;
-        }
-      }
-
       .recent-orders-table {
         .mat-mdc-table {
           .mat-mdc-cell {
             .product-info {
               .image {
+                width: 50px;
                 margin-right: 15px;
               }
-
+              
               .info {
                 a {
                   font-size: 14px;
@@ -298,8 +527,258 @@
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+/* Animations supplémentaires */
+.mat-mdc-row {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
+  
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.05}s;
+    }
+  }
+}
 
-@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-@media only screen and (min-width: 1600px) {}
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff6b00, #ff9800);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #e65100, #f57c00);
+}
+  .trinta-card {
+    &.recent-orders-card {
+      mat-card-header {
+        text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+        padding-bottom: 25px;
+        
+
+        
+        mat-card-title {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #ff6b00;
+          text-align: center;
+          padding: 25px 0 15px;
+          font-family: 'Montserrat', sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          position: relative;
+          display: inline-block;
+          background: linear-gradient(135deg, #ff6b00 0%, #ff9800 50%, #ffcc80 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-shadow: 0 2px 10px rgba(255, 107, 0, 0.2);
+          
+          &::before {
+            content: 'COMMANDES';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9rem;
+            color: #ff9800;
+            font-weight: 600;
+            letter-spacing: 4px;
+            opacity: 0.9;
+            text-transform: uppercase;
+            background: none;
+            -webkit-text-fill-color: initial;
+            text-shadow: none;
+          }
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ffcc80, #ff9800);
+            border-radius: 3px;
+            animation: pulseLine 2s ease-in-out infinite;
+          }
+          
+          .badge-new {
+            display: inline-block;
+            margin-left: 15px;
+            background: linear-gradient(135deg, #ff3d00 0%, #ff6b00 100%);
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            vertical-align: super;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(255, 61, 0, 0.3);
+            animation: pulseBadge 1.5s ease-in-out infinite;
+            
+            &::before {
+              content: '🔥 ';
+              font-size: 0.8rem;
+            }
+          }
+        }
+        
+        mat-card-subtitle {
+          color: #666;
+          font-size: 1.1rem;
+          font-weight: 400;
+          margin-top: 15px;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: 0.5px;
+          
+          &::before {
+            content: '📊 ';
+            margin-right: 8px;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+// Animations
+@keyframes floatPizza {
+  0%, 100% { 
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  50% { 
+    transform: translateX(-50%) translateY(-10px) rotate(10deg);
+  }
+}
+
+@keyframes pulseLine {
+  0%, 100% { 
+    opacity: 1;
+    width: 60px;
+  }
+  50% { 
+    opacity: 0.7;
+    width: 80px;
+  }
+}
+
+@keyframes pulseBadge {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 61, 0, 0.3);
+  }
+  50% { 
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255, 61, 0, 0.4);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  ::ng-deep {
+    .trinta-card {
+      &.recent-orders-card {
+        mat-card-header {
+          margin-bottom: 30px;
+          padding-bottom: 20px;
+          
+          &::before {
+            font-size: 22px;
+            top: -10px;
+          }
+          
+          mat-card-title {
+            font-size: 2rem;
+            padding: 20px 0 12px;
+            
+            &::before {
+              font-size: 0.8rem;
+              letter-spacing: 3px;
+              top: -5px;
+            }
+            
+            .badge-new {
+              display: block;
+              margin: 10px auto 0;
+              width: fit-content;
+              font-size: 0.65rem;
+            }
+          }
+          
+          mat-card-subtitle {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  ::ng-deep {
+    .trinta-card {
+      &.recent-orders-card {
+        mat-card-header {
+          mat-card-title {
+            font-size: 1.8rem;
+            
+            &::before {
+              font-size: 0.7rem;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Effet au survol
+@media (hover: hover) {
+  ::ng-deep {
+    .trinta-card {
+      &.recent-orders-card {
+        mat-card-header {
+          mat-card-title {
+            transition: all 0.3s ease;
+            
+            &:hover {
+              transform: translateY(-3px);
+              text-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+              
+              .badge-new {
+                animation: none;
+                transform: scale(1.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
