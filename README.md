@@ -1,7 +1,5 @@
 # OROPOS - Site Web de Point de Vente (POS)
 
-**Projet réalisé dans le cadre de ISS4U | Juil 2024 - Août 2024**
-
 OROPOS est un site web de point de vente (POS) inspiré des solutions professionnelles comme OROPOS. L’objectif était de fournir une **interface utilisateur intuitive, réactive et performante**, adaptée à la gestion des transactions en temps réel.
 
 ---
@@ -57,7 +55,7 @@ OROPOS permet de gérer efficacement les commandes, afficher les transactions en
 ## Technologies utilisées
 
 - **Frontend** : Angular, TypeScript, HTML, CSS  
-- **Versioning / Collaboration** : Git  
+- **Versioning / Collaboration** : Git
 - **Concepts clés** : UX/UI design, Responsive Design, Réactivité temps réel
 
 ---
@@ -102,4 +100,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
 
